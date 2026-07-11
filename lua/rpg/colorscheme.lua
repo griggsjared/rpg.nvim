@@ -1,5 +1,10 @@
+---Colorscheme builder.
 local M = {}
 
+---Builds the intermediate colorscheme color table from the base palette.
+---@param palette table Base palette with hex color strings.
+---@param helpers table Color manipulation helpers.
+---@return table Nested color table used by theme modules.
 function M.build(palette, helpers)
   local hp = helpers
   local p = palette
