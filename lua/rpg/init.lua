@@ -2,6 +2,7 @@ local M = {}
 
 M.default_config = {
 	transparent_background = false,
+	highlight_overrides = {},
 }
 
 M.did_setup = false
@@ -42,6 +43,12 @@ function M.setup(opts)
 	highlights = vim.tbl_deep_extend("force", highlights, plugins.get(c, helpers))
 
 	M.apply_transparency(highlights)
+
+	if M.config.highlight_overrides then
+		for group, settings in pairs(M.config.highlight_overrides) do
+			highlights[group] = settings
+		end
+	end
 
 	for group, settings in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, settings)
