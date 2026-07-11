@@ -1,5 +1,9 @@
+---Gitsigns integration: highlight groups and blame color overrides.
 local M = {}
 
+---Convert a hex color string to an RGB table.
+---@param hex string Hex color string.
+---@return table RGB color table.
 local function hex_to_rgb(hex)
 	return {
 		tonumber(hex:sub(2, 3), 16),
@@ -12,7 +16,11 @@ local saved = {}
 local temp_colors = {}
 local hash_hls = {}
 
---- swap upvalue `name` on fn; return previous value if swapped
+---Swap an upvalue on a function.
+---@param fn function Function to modify.
+---@param name string Upvalue name to swap.
+---@param new_val any New value for the upvalue.
+---@return any Previous value if swapped, nil otherwise.
 local function swap_upvalue(fn, name, new_val)
 	local i = 1
 	while true do
@@ -28,7 +36,13 @@ local function swap_upvalue(fn, name, new_val)
 	end
 end
 
---- like gitsigns.get_temp_hl but re-reads Normal bg each call (no stale cache)
+---Generate a temporary highlight group for gitsigns blame.
+---@param min number Minimum value.
+---@param max number Maximum value.
+---@param t number Current value.
+---@param alpha number Alpha blend value.
+---@param fg boolean Whether to use foreground.
+---@return string Highlight group name.
 local function rpg_get_temp_hl(min, max, t, alpha, fg)
 	local Color = require("gitsigns.color")
 	local denom = math.max(max, t) - min
@@ -47,7 +61,9 @@ local function rpg_get_temp_hl(min, max, t, alpha, fg)
 	return hl
 end
 
---- map a commit SHA to one of the palette highlight groups
+---Map a commit SHA to one of the palette highlight groups.
+---@param sha string Commit SHA string.
+---@return string Highlight group name.
 local function rpg_get_hash_color(sha)
 	local sum = 0
 	for i = 1, #sha do
@@ -56,6 +72,8 @@ local function rpg_get_hash_color(sha)
 	return hash_hls[(sum % #hash_hls) + 1]
 end
 
+---Iterate over each function upvalue in gitsigns blame.
+---@param fn function Callback function for each upvalue.
 local function for_each_blame_upvalue(fn)
 	if not pcall(require, "gitsigns.actions.blame") then
 		return
@@ -77,6 +95,9 @@ local function for_each_blame_upvalue(fn)
 	end
 end
 
+---Set up gitsigns color overrides and blame highlighting.
+---@param c table Colorscheme color table.
+---@return boolean True if gitsigns was found and set up.
 function M.setup(c)
 	if not pcall(require, "gitsigns.color") then
 		return false
@@ -108,6 +129,7 @@ function M.setup(c)
 	return true
 end
 
+---Restore gitsigns original color functions.
 local function restore()
 	if not pcall(require, "gitsigns.color") then
 		return
@@ -128,6 +150,10 @@ local function restore()
 	end
 end
 
+---Get gitsigns highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Gitsigns highlight group definitions.
 function M.get(c, _)
 	M.setup(c)
 	local group = vim.api.nvim_create_augroup("rpg.gitsigns", { clear = true })

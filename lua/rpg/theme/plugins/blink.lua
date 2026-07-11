@@ -1,5 +1,10 @@
+---Blink.cmp highlight groups.
 local M = {}
 
+---Get Blink.cmp highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Blink.cmp highlight group definitions.
 function M.get(c, hp)
 	return {
 		BlinkCmpMenu = { bg = c.base.surface, fg = c.base.foreground },
