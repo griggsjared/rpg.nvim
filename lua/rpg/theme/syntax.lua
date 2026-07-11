@@ -1,5 +1,10 @@
+---Legacy syntax highlight groups.
 local M = {}
 
+---Get legacy syntax highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Syntax highlight group definitions.
 function M.get(c, _)
 	return {
 		Comment = { fg = c.base.dimmed3, italic = true },

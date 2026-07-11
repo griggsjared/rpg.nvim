@@ -1,5 +1,10 @@
+---Editor UI highlight groups.
 local M = {}
 
+---Get editor UI highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Editor UI highlight group definitions.
 function M.get(c, hp)
 	return {
 		ColorColumn = { bg = c.base.dimmed5 },
