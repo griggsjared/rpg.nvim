@@ -1,6 +1,11 @@
+---Trouble.nvim highlight groups.
 local M = {}
 
-function M.get(c, hp)
+---Get Trouble.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Trouble.nvim highlight group definitions.
+function M.get(c, _)
 	return {
 		TroubleNormal = { bg = c.base.surface, fg = c.base.foreground },
 		TroubleNormalNC = { bg = c.base.surface, fg = c.base.dimmed1 },
