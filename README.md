@@ -35,6 +35,10 @@ A dark Neovim colorscheme with colors inspired by gear rarity colors from your f
 require("rpg").setup({
     -- Enable transparent background
     transparent_background = false,
+    -- Plugin highlight integrations: true (all), false (none), or allowlist
+    -- plugins = true,                 -- all plugin integrations (default)
+    -- plugins = false,                -- no plugin integrations
+    -- plugins = { "gitsigns", "lualine" }, -- only these
     -- Override specific highlight groups
     highlight_overrides = {
         -- Example: make comments brighter

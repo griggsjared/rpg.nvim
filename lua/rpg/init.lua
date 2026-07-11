@@ -2,6 +2,7 @@ local M = {}
 
 M.default_config = {
 	transparent_background = false,
+	plugins = true,
 	highlight_overrides = {},
 }
 
@@ -40,7 +41,7 @@ function M.setup(opts)
 	highlights = vim.tbl_deep_extend("force", highlights, syntax.get(c, helpers))
 	highlights = vim.tbl_deep_extend("force", highlights, treesitter.get(c, helpers))
 	highlights = vim.tbl_deep_extend("force", highlights, lsp.get(c, helpers))
-	highlights = vim.tbl_deep_extend("force", highlights, plugins.get(c, helpers))
+	highlights = vim.tbl_deep_extend("force", highlights, plugins.get(c, helpers, M.config.plugins))
 
 	M.apply_transparency(highlights)
 
