@@ -1,5 +1,10 @@
+---Treesitter highlight groups.
 local M = {}
 
+---Get treesitter highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Treesitter highlight group definitions.
 function M.get(c, hp)
 	local spec = {
 		["@annotation"] = { fg = c.base.blue, italic = false },

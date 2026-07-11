@@ -1,5 +1,10 @@
+---LSP and diagnostic highlight groups.
 local M = {}
 
+---Get LSP and diagnostic highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights LSP and diagnostic highlight group definitions.
 function M.get(c, hp)
   return {
     DiagnosticError = { fg = c.inputValidation.errorForeground },
