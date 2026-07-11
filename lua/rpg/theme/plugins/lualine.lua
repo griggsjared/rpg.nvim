@@ -1,5 +1,10 @@
+---Lualine highlight groups.
 local M = {}
 
+---Get Lualine highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Lualine highlight group definitions.
 function M.get(c, _)
 	return {
 		LualineNormalA = { bg = "NONE", fg = c.base.green },

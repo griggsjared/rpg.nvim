@@ -1,5 +1,10 @@
+---Lazy.nvim highlight groups.
 local M = {}
 
+---Get Lazy.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Lazy.nvim highlight group definitions.
 function M.get(c, hp)
 	local lazy_bg = hp.lighten(c.sideBar.background, 5)
 

@@ -1,5 +1,10 @@
+---Render Markdown highlight groups.
 local M = {}
 
+---Get Render Markdown highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Render Markdown highlight group definitions.
 function M.get(c, hp)
   return {
     RenderMarkdownHeader1 = { fg = c.base.green },
