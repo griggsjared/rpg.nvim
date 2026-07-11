@@ -1,3 +1,5 @@
+---Default color palette for rpg.nvim.
+---Color names follow ANSI terminal conventions; values are hex color strings.
 local palette = {
 	background = "#1a1a1a",
 	foreground = "#fcfcfa",
