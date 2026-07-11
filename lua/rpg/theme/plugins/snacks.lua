@@ -1,5 +1,10 @@
+---Snacks.nvim highlight groups.
 local M = {}
 
+---Get Snacks.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param hp table Helper functions/modules.
+---@return table<string, table> highlights Snacks.nvim highlight group definitions.
 function M.get(c, hp)
 	return {
 		SnacksIndent = { fg = c.base.dimmed5 },

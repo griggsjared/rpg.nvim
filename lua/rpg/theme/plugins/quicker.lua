@@ -1,5 +1,10 @@
+---Quicker.nvim highlight groups.
 local M = {}
 
+---Get Quicker.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Quicker.nvim highlight group definitions.
 function M.get(c, _)
 	return {
 		QuickFixLine = { bg = c.base.dimmed5, fg = c.base.foreground },
