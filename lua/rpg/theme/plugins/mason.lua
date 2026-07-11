@@ -1,5 +1,10 @@
+---Mason.nvim highlight groups.
 local M = {}
 
+---Get Mason.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Mason.nvim highlight group definitions.
 function M.get(c, _)
 	return {
 		MasonNormal = { link = "LazyNormal" },

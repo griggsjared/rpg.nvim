@@ -1,6 +1,11 @@
+---Oil.nvim highlight groups.
 local M = {}
 
-function M.get(c, hp)
+---Get Oil.nvim highlight definitions.
+---@param c table Colorscheme color table.
+---@param _ table Helper functions/modules (unused).
+---@return table<string, table> highlights Oil.nvim highlight group definitions.
+function M.get(c, _)
 	return {
 		OilDir = { fg = c.base.blue },
 		OilDirIcon = { fg = c.base.blue },
