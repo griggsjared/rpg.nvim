@@ -1,3 +1,4 @@
+---rpg.nvim colorscheme entry point.
 local M = {}
 
 M.default_config = {
@@ -8,6 +9,8 @@ M.default_config = {
 
 M.did_setup = false
 
+---Set up the rpg colorscheme.
+---@param opts table|nil User configuration options.
 function M.setup(opts)
 	opts = opts or {}
 	M.config = vim.tbl_deep_extend("force", M.default_config, opts)
@@ -58,6 +61,8 @@ function M.setup(opts)
 	M.set_terminal_colors(c)
 end
 
+---Apply transparent background to selected highlight groups.
+---@param highlights table Highlight group definitions.
 function M.apply_transparency(highlights)
 	if not M.config.transparent_background then return end
 
@@ -100,6 +105,8 @@ function M.apply_transparency(highlights)
 	end
 end
 
+---Set Neovim terminal colors from the colorscheme.
+---@param c table Colorscheme color table.
 function M.set_terminal_colors(c)
 	vim.g.terminal_color_0 = c.base.background -- black
 	vim.g.terminal_color_1 = c.base.red -- red
