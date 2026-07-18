@@ -38,12 +38,12 @@ function M.build(palette, helpers)
   }
 
   c.editorHoverWidget = {
-    background = dimmed5,
+    background = overlay,
     border = p.background,
   }
 
   c.editorSuggestWidget = {
-    background = dimmed5,
+    background = overlay,
     border = dimmed5,
     foreground = dimmed1,
     highlightForeground = p.foreground,
@@ -67,7 +67,7 @@ function M.build(palette, helpers)
   }
 
   c.sideBar = {
-    background = p.background,
+    background = overlay,
     foreground = dimmed2,
   }
 
@@ -178,7 +178,7 @@ function M.build(palette, helpers)
   }
 
   c.notifications = {
-    background = dimmed5,
+    background = overlay,
     border = dimmed5,
     foreground = dimmed1,
   }

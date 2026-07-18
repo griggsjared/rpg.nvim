@@ -31,6 +31,11 @@ function M.get(c, hp)
       bg = c.errorLens.hintBackground,
       fg = c.errorLens.hintForeground,
     },
+    DiagnosticFloatingError = { bg = c.base.overlay },
+    DiagnosticFloatingWarn = { bg = c.base.overlay },
+    DiagnosticFloatingInfo = { bg = c.base.overlay },
+    DiagnosticFloatingHint = { bg = c.base.overlay },
+    DiagnosticFloatingOk = { bg = c.base.overlay },
     DiagnosticUnderlineError = {
       sp = c.inputValidation.errorBorder,
       undercurl = true,

@@ -6,8 +6,6 @@ local M = {}
 ---@param hp table Helper functions/modules.
 ---@return table<string, table> highlights Lazy.nvim highlight group definitions.
 function M.get(c, hp)
-	local lazy_bg = hp.lighten(c.sideBar.background, 5)
-
 	return {
 		LazyButton = { bg = c.button.background, fg = c.button.foreground },
 		LazyComment = { fg = c.base.yellow },
@@ -19,16 +17,16 @@ function M.get(c, hp)
 			bold = true,
 		},
 		LazyNormal = {
-			bg = lazy_bg,
+			bg = c.base.overlay,
 			fg = hp.lighten(c.sideBar.foreground, 5),
 		},
-		LazyProgressDone = { bg = lazy_bg, fg = c.tab.activeBorder },
+		LazyProgressDone = { bg = c.base.overlay, fg = c.tab.activeBorder },
 		LazyProgressTodo = {
-			bg = lazy_bg,
+			bg = c.base.overlay,
 			fg = c.tab.unfocusedActiveBorder,
 		},
 		LazyProp = {
-			bg = lazy_bg,
+			bg = c.base.overlay,
 			fg = c.base.green,
 		},
 		LazyUrl = { fg = c.base.blue },
