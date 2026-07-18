@@ -7,9 +7,9 @@ local M = {}
 ---@return table<string, table> highlights Treesitter Context highlight group definitions.
 function M.get(c, _)
 	return {
-		TreesitterContext = { bg = c.base.panel, fg = c.base.foreground },
-		TreesitterContextBottom = { bg = c.base.panel, sp = c.base.dimmed5 },
-		TreesitterContextLineNumber = { bg = c.base.panel, fg = c.base.dimmed3 },
+		TreesitterContext = { bg = c.base.surface, fg = c.base.foreground },
+		TreesitterContextBottom = { bg = c.base.surface, sp = c.base.dimmed5 },
+		TreesitterContextLineNumber = { bg = c.base.surface, fg = c.base.dimmed3 },
 		TreesitterContextSeparator = { fg = c.base.dimmed5 },
 	}
 end

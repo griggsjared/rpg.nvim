@@ -15,7 +15,6 @@ function M.build(palette, helpers)
   local dimmed4 = hp.blend(p.foreground, 0.29, p.background)
   local dimmed5 = hp.blend(p.foreground, 0.17, p.background)
   local surface = hp.darken(p.background, 3)
-  local panel = hp.darken(p.background, 10)
 
   local c = {}
 
@@ -161,7 +160,7 @@ function M.build(palette, helpers)
   }
 
   c.statusBar = {
-    background = panel,
+    background = surface,
     foreground = dimmed3,
     activeForeground = dimmed1,
   }
@@ -200,7 +199,6 @@ function M.build(palette, helpers)
     background = p.background,
     foreground = p.foreground,
     surface = surface,
-    panel = panel,
     red = p.red,
     green = p.green,
     yellow = p.yellow,
