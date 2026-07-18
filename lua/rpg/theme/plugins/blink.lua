@@ -7,10 +7,10 @@ local M = {}
 ---@return table<string, table> highlights Blink.cmp highlight group definitions.
 function M.get(c, hp)
 	return {
-		BlinkCmpMenu = { bg = c.base.surface, fg = c.base.foreground },
-		BlinkCmpMenuBorder = { bg = c.base.surface, fg = c.base.dimmed2 },
-		BlinkCmpDoc = { bg = c.base.surface },
-		BlinkCmpDocBorder = { bg = c.base.surface, fg = c.base.dimmed2 },
+		BlinkCmpMenu = { bg = c.base.overlay, fg = c.base.foreground },
+		BlinkCmpMenuBorder = { bg = c.base.overlay, fg = c.base.dimmed2 },
+		BlinkCmpDoc = { bg = c.base.overlay },
+		BlinkCmpDocBorder = { bg = c.base.overlay, fg = c.base.dimmed2 },
 		BlinkCmpMenuSelection = { bg = c.base.dimmed5 },
 		BlinkCmpLabelDescription = { fg = hp.lighten(c.base.dimmed1, 3) },
 		BlinkCmpLabelDeprecated = { fg = nil, bg = nil, strikethrough = true },

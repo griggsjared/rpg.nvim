@@ -7,8 +7,8 @@ local M = {}
 ---@return table<string, table> highlights Trouble.nvim highlight group definitions.
 function M.get(c, _)
 	return {
-		TroubleNormal = { bg = c.base.surface, fg = c.base.foreground },
-		TroubleNormalNC = { bg = c.base.surface, fg = c.base.dimmed1 },
+		TroubleNormal = { bg = c.base.overlay, fg = c.base.foreground },
+		TroubleNormalNC = { bg = c.base.overlay, fg = c.base.dimmed1 },
 		TroubleText = { fg = c.base.foreground },
 		TroubleTextInformation = { fg = c.base.blue },
 		TroubleTextWarning = { fg = c.base.yellow },
