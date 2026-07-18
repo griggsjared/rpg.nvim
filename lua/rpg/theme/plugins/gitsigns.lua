@@ -176,12 +176,9 @@ function M.get(c, _)
 		end,
 	})
 	return {
-		SignAdd = { fg = c.editorGutter.addedBackground },
-		SignChange = { fg = c.editorGutter.modifiedBackground },
-		SignDelete = { fg = c.editorGutter.deletedBackground },
-		GitSignsAdd = { link = "SignAdd" },
-		GitSignsChange = { link = "SignChange" },
-		GitSignsDelete = { link = "SignDelete" },
+		GitSignsAdd = { fg = c.editorGutter.addedBackground },
+		GitSignsChange = { fg = c.editorGutter.modifiedBackground },
+		GitSignsDelete = { fg = c.editorGutter.deletedBackground },
 		GitSignsCurrentLineBlame = { fg = c.base.dimmed4 },
 		GitSignsAddInline = { link = "DiffAdd" },
 		GitSignsChangeInline = { link = "DiffChange" },
