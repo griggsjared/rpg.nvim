@@ -48,6 +48,8 @@ function M.get(c, hp)
 		StatusLineSeparator = { fg = c.statusBar.background },
 		StatusLineTerm = { fg = c.statusBar.background },
 		StatusLineTermNC = { fg = c.statusBar.background },
+		WinBar = { bg = "NONE" },
+		WinBarNC = { bg = "NONE" },
 		Tabline = { link = "BufferLineBackground" },
 		TablineFill = { link = "BufferLineFill" },
 		TablineSel = { link = "BufferLineBufferSelected" },
