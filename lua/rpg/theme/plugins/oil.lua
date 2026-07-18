@@ -7,26 +7,22 @@ local M = {}
 ---@return table<string, table> highlights Oil.nvim highlight group definitions.
 function M.get(c, _)
 	return {
+		OilEmpty = { fg = c.base.dimmed3 },
+		OilHidden = { fg = c.base.dimmed3 },
 		OilDir = { fg = c.base.blue },
 		OilDirIcon = { fg = c.base.blue },
+		OilSocket = { fg = c.base.red },
+		OilFile = { fg = c.base.foreground },
 		OilLink = { fg = c.base.magenta },
+		OilOrphanLink = { fg = c.base.red },
 		OilLinkTarget = { fg = c.base.dimmed3 },
+		OilOrphanLinkTarget = { fg = c.base.red },
 		OilCopy = { fg = c.base.yellow, bold = true },
 		OilMove = { fg = c.base.magenta, bold = true },
 		OilChange = { fg = c.base.blue, bold = true },
 		OilCreate = { fg = c.base.green, bold = true },
 		OilDelete = { fg = c.base.red, bold = true },
-		OilPermissionNone = { fg = c.base.dimmed4 },
-		OilPermissionRead = { fg = c.base.yellow },
-		OilPermissionWrite = { fg = c.base.blue },
-		OilPermissionExecute = { fg = c.base.green },
-		OilTypeDir = { fg = c.base.blue },
-		OilTypeFifo = { fg = c.base.magenta },
-		OilTypeFile = { fg = c.base.foreground },
-		OilTypeLink = { fg = c.base.magenta },
-		OilTypeSocket = { fg = c.base.red },
-		OilWinbar = { bg = c.base.surface, fg = c.base.dimmed1 },
-		OilWinbarNC = { bg = c.base.surface, fg = c.base.dimmed3 },
+		OilTrashSourcePath = { fg = c.base.dimmed3 },
 	}
 end
 
